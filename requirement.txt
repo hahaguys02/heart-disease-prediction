@@ -1,0 +1,7 @@
+some of the required libraries are:
+pandas
+matplotlib
+seaborn
+scikit-learn
+joblib
+streamlit (just for UI)
