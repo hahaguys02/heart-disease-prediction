@@ -69,5 +69,6 @@ print(lr.score(x_test, y_test))
 import joblib
 
 joblib.dump(lr, 'heart_sol.pkl')
+joblib.dump(se, 'scaler.pkl')
 
 
