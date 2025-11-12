@@ -22,12 +22,12 @@ restecg = st.selectbox("Resting ECG results (0–2)", [0, 1, 2])
 thalach = st.number_input("Maximum Heart Rate Achieved", 60, 220, 150)
 exang = st.selectbox("Exercise Induced  Angina (1 = Yes, 0 = No)", [0, 1])
 oldpeak = st.number_input("ST Depression Induced by Exercise", 0.0, 10.0, 1.0)
-
+slope=st.number_input("Slope of the Peak Exercise ST Segment (0-3)", 0, 3, 1)
 
 # Convert input to model format
 sex_val = 1 if sex == "Male" else 0
 features = np.array([[age, sex_val, cp, trestbps, chol, fbs, restecg, thalach, 
-                      exang, oldpeak]])
+                      exang, oldpeak,slope]])
 
 # Predict button
 if st.button("🔍 Predict"):
@@ -41,5 +41,6 @@ if st.button("🔍 Predict"):
 # Footer
 st.markdown("---")
 st.caption("Developed by Hahaguys | Machine Learning Project | Streamlit ❤️")
+
 
 
