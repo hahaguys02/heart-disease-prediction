@@ -14,7 +14,7 @@ st.write("Enter the patient's medical details below and click **Predict** to che
 # Input fields
 age = st.number_input("Age", 18, 100, 40)
 sex = st.selectbox("Sex", ["Male", "Female"])
-cp = st.selectbox("Chest Pain Type (0-3)", [0, 1, 2, 3])
+cp = st.selectbox("Chest Pain Type (0-3)", [0, 1, 2, 3, 4])
 trestbps = st.number_input("Resting Blood Pressure (mm Hg)", 80, 200, 120)
 chol = st.number_input("Serum Cholesterol (mg/dl)", 100, 600, 200)
 fbs = st.selectbox("Fasting Blood Sugar > 120 mg/dl", [0, 1])
@@ -41,3 +41,4 @@ if st.button("🔍 Predict"):
 # Footer
 st.markdown("---")
 st.caption("Developed by Hahaguys | Machine Learning Project | Streamlit ❤️")
+
