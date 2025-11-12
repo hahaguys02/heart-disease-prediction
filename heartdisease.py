@@ -58,7 +58,7 @@ se=StandardScaler()
 se.fit(input)
 input=pd.DataFrame(se.transform(input), columns=input.columns)
 
-x_train, x_test, y_train, y_test=train_test_split(input, output, test_size=0.3, random_state=42)
+x_train, x_test, y_train, y_test=train_test_split(input, output, test_size=0.2, random_state=42)
 
 lr=LogisticRegression()
 lr.fit(x_train, y_train)
@@ -69,3 +69,4 @@ print(lr.score(x_test, y_test))
 import joblib
 
 joblib.dump(lr, 'heart_model.pkl')
+
