@@ -4,6 +4,7 @@ import numpy as np
 
 # Load the trained model
 model = joblib.load('heart_sol.pkl')
+scaler = joblib.load('scaler.pkl')
 
 st.set_page_config(page_title="Heart Disease Predictor", page_icon="❤️", layout="centered")
 
@@ -29,9 +30,10 @@ sex_val = 1 if sex == "Male" else 0
 features = np.array([[age, sex_val, cp, trestbps, chol, fbs, restecg, thalach, 
                       exang, oldpeak,slope]])
 
+scaled_features = scaler.transform(features)
 # Predict button
 if st.button("🔍 Predict"):
-    prediction = model.predict(features)[0]
+    prediction = model.predict(scaled_features)[0]
     
     if prediction == 1:
         st.error("⚠️ The patient is **likely to have heart disease**.")
@@ -41,6 +43,7 @@ if st.button("🔍 Predict"):
 # Footer
 st.markdown("---")
 st.caption("Developed by Hahaguys | Machine Learning Project | Streamlit ❤️")
+
 
 
 
