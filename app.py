@@ -3,7 +3,7 @@ import joblib
 import numpy as np
 
 # Load the trained model
-model = joblib.load('heart_model.pkl')
+model = joblib.load('heart_sol.pkl')
 
 st.set_page_config(page_title="Heart Disease Predictor", page_icon="❤️", layout="centered")
 
@@ -41,6 +41,7 @@ if st.button("🔍 Predict"):
 # Footer
 st.markdown("---")
 st.caption("Developed by Hahaguys | Machine Learning Project | Streamlit ❤️")
+
 
 
 
